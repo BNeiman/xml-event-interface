@@ -1,6 +1,6 @@
 ##Event Interface
 ---
-The EventInterface.exe is a MS .NET command line executable that can be called to create an Incident through AMT’s Service Management Integration.  It accepts values used to create the Incident one of two ways.
+The EventInterface.exe is a MS .NET command line executable that can be called to create an Incident through the XML Document Integration Gateway.  It accepts values used to create the Incident one of two ways.
 
 1. XML Template File - This XML file contains the static values that are used to set the Incident values.
 2. Name/Value Command Line Parameters - Each XML Template File element can be overwritten by a corresponding command line parameter.
