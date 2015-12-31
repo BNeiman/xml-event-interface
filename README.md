@@ -1,6 +1,6 @@
-#Event Interface
-___
-The EventInterface.exe is a MS .NET command line executable that can be called to create an Incident through AMT’s Service Management Integration.  It accepts values used to create the Incident one of two ways.
+##Event Interface
+---
+The EventInterface.exe is a MS .NET command line executable that can be called to create an Incident through the XML Document Integration Gateway.  It accepts values used to create the Incident one of two ways.
 
 1. XML Template File - This XML file contains the static values that are used to set the Incident values.
 2. Name/Value Command Line Parameters - Each XML Template File element can be overwritten by a corresponding command line parameter.
@@ -14,8 +14,8 @@ The resulting Incident Number is returned synchronously in the response and writ
 The integration can be configured to send an asynchronous response to a listening URL web service, XML POST or SMTP message at your request.  
 
 
-##Setup
-___
+###Setup
+---
 1. Run Setup.exe and follow the prompts of the installation wizard.
 2. Update EventInterfaceFile.xml with relevant values for your Companies environment.
 3. Submit a request through Technology Support:  https://technologysupport.accenture.com/ 
@@ -23,15 +23,15 @@ ___
   1. You will need to Submit a Request for Application Support for ITSM:
    
   2. Request for AMT Service Management XML Document Integration Access
-    1. The Service Management Company Name you are integrating with.
-    2. Describe your integration requirements.  
+    * The Service Management Company Name you are integrating with.
+    * Describe your integration requirements.  
   3. You require the following:
-    1. Integration ID / PW and Target Name
+    * Integration ID / PW and Target Name
 4. Update EventInterface.exe.config ID / PW and Target Name
 
 
-##Logging
-___
+###Logging
+---
 The results for each execution are written to the system event log.  The command line 
 parameters template file and results are captured.
 
@@ -57,32 +57,32 @@ Event Log Example:
 ```
 
 
-##Requirements
-___
+###Requirements
+---
 The application is distributed with 4 files.
   - EventInterface.exe - Executable.
   - EventInterface.exe.config - The Event Interface integration details are stored here.  
   - EventInterfaceFile.xml - This is the default XML Template File.  
 
-###EventInterface.exe.config
+####EventInterface.exe.config
 You will need to update this file with the URL, ID, PW and TargetID for your integration.  
 * URL – Integration URL requires ID/PW for authentication.
 * ID / PW – The ID/PW used to authenticate with the Integration URL.
 * TargetID – The unique Target Name for your integration instance.  Target ID can be passed in the *template* `xml` file as a tag, `<TargetID>[Target ID]</TargetID>`.
 
-###EventInterfaceFile.xml
+####EventInterfaceFile.xml
 This file can be used to create multiple variations of the default values used to 
 create the Incident.  If other files are used, pass the file name as a command line 
 parameter.  
 
 Values in the XML file are overwritten by those passed through the command line.
 
-####Environment Information
+#####Environment Information
 Support for WIN32 executable such as Windows Server 2003-2013, XP, Vista, Win 7 & 8 etc...
 
 
-##XML Template File
-___
+###XML Template File
+---
 The XML Template File name can be passed as a command line parameter.  If the file is 
 not passed, the application will default to "EventInterfaceFile.xml" in the current 
 application working directory.
@@ -95,14 +95,14 @@ of a full path and file name.
 
 	
 
-##Name/Value Command Line Parameters
-___
+###Name/Value Command Line Parameters
+---
 Command line parameters are passed as Name/Value pares separated by "=".  Each of the Values should be enclosed by quotes, "".  The list of available values is shown under Incident Parameters.
 
 Each of the XML Template elements can be set by passing a command line parameter.  For Example, `<Description></Description>` can be overwritten by passing `Description="Hello World!"`. 
 
-##Examples
-___
+###Examples
+---
 
 Passing the value "show" will write the application output to the console.
 
@@ -110,8 +110,8 @@ Examples:
      `C:\temp\>\EventInterface.exe show Description="Description of the Event for the help desk here…" EventInterfaceFile="c:\temp\Incident1.xml"`
 
 
-##Return Codes -
-___
+###Return Codes -
+---
 The results for each execution are written to the system event log.  The following exit codes are passed to the console.
 ```
 Success = 0,
@@ -123,16 +123,16 @@ Error Calling WS = 5,
 Error Creating Ticket = 6,
 Unknown = 10 (see Event Log for details)
 ```
-___
+---
 
 
-##Default Values
-___
+###Default Values
+---
 Set Default Customer, Classification and Assignment values in the template or via the command line.  Defaults are used when the values passes cannot be found in the system.  
 
 
-##Incident Parameters -
-___
+###Incident Parameters -
+---
 Each XML Template File element can be overwritten by a corresponding command line parameter shown here.
 
 ITSM style parameters:
