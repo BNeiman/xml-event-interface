@@ -41,7 +41,7 @@ parameters template file and results are captured.
 
 Event Log Example:
 ```
-    *Event Interface*
+    **Event Interface**
 
     Command Line Parameters:
     ExtRefNo=BPPM-TEST0000100-140
@@ -69,22 +69,26 @@ The application is distributed with 4 files.
 -   EventInterface.exe.config - The Event Interface integration details are stored here.
 -   EventInterfaceFile.xml - This is the default XML Template File.
 
-*EventInterface.exe.config*
+**EventInterface.exe.config**
+
 You will need to update this file with the URL, ID, PW and TargetID for your integration.
 
 -   URL - Integration URL requires ID/PW for authentication.
 -   ID / PW - The ID/PW used to authenticate with the Integration URL.
 -   TargetID - The unique Target Name for your integration instance. Target ID can be passed in the ***template*** `xml` file as a tag, `<TargetID>[Target ID]</TargetID>`
 
-*EventInterfaceFile.xml*
+**EventInterfaceFile.xml**
+
 This file can be used to create multiple variations of the default values used to create the Incident. If other files are used, pass the file name as a command line parameter.
 
 Values in the XML file are overwritten by those passed through the command line.
 
-*Environment Information*
+**Environment Information**
+
 Support for WIN32 executable such as Windows Server 2003-2013, XP, Vista, Win 7 & 8 etc...
 
-*XML Template File*
+**XML Template File**
+
 The XML Template File name can be passed as a command line parameter. If the file is
 not passed, the application will default to "EventInterfaceFile.xml" in the current
 application working directory.
@@ -105,19 +109,19 @@ Examples
 --------
 Passing the value "show" will write the application output to the console.
 
-*Example 1:*
+**Example 1:**
 
   This example demonstrates a simple use case that relies on the values in Incident1.xml for ticket creation but overrides the Incident short description. 
 ```
-  C:\temp\EventInterface.exe show Description="Description of the Event for the help desk here" EventInterfaceFile="c:\temp\Incident1.xml"
+C:\temp\EventInterface.exe show Description="Description of the Event for the help desk here" EventInterfaceFile="c:\temp\Incident1.xml"
 ```
 
-*Example 2:*
+**Example 2:**
 
   This example demonstrates a more complex use case with multiple values passed as parameters.  These values over-ride the values in the template EventInterface1.xml.  The key word *show* is used to display the command line values passed and result. 
   
 ```
-  C:\temp\EventInterface.exe EventInterfaceFile=*EventInterface1.xml* ExtRefNo=NTTA_CRPROD_X12:13677005-###99 Description="frdosivspg6001a_ctr1 : MY-DISK-SRVR is DOWN!" Detailed
+C:\temp\EventInterface.exe EventInterfaceFile=*EventInterface1.xml* ExtRefNo=NTTA_CRPROD_X12:13677005-###99 Description="frdosivspg6001a_ctr1 : MY-DISK-SRVR is DOWN!" Detailed
 Description="Event ID: 13677005 Initial Message: SRVR-NAME-1 : :SRVR-NAME-1.storage.MY-CO is DOWN! Object: /Status/Ping Object_Class: VENDORS_/Ping/Storage/MY-CO Parameter:  ParameterValue: " EmailAddress="MONITORING TOOLS" Impact=1 Urgency=1 CustomerCompany=ACME AssignGroup=GROUP-WW-STORAGE_L2 ReportedSource="Vendor Impact Manager Event" CatTier1=STORAGE CIName=SRVR-NAME-1 location=Unknown *show*
 
 
