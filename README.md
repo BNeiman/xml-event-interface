@@ -106,13 +106,20 @@ Examples
 Passing the value "show" will write the application output to the console.
 
 *Example 1:*
-  This example demonstrates a simple use case that relies on the values in Incident1.xml for ticket creation but overrides the Incident short description. 
-  `C:\temp\EventInterface.exe show Description="Description of the Event for the help desk here" EventInterfaceFile="c:\temp\Incident1.xml"`
 
-*Example:*
+  This example demonstrates a simple use case that relies on the values in Incident1.xml for ticket creation but overrides the Incident short description. 
+```
+  C:\temp\EventInterface.exe show Description="Description of the Event for the help desk here" EventInterfaceFile="c:\temp\Incident1.xml"
+```
+
+*Example 2:*
+
   This example demonstrates a more complex use case with multiple values passed as parameters.  These values over-ride the values in the template EventInterface1.xml.  The key word *show* is used to display the command line values passed and result. 
-  `C:\temp\EventInterface.exe EventInterfaceFile=*EventInterface1.xml* ExtRefNo=NTTA_CRPROD_X12:13677005-###99 Description="frdosivspg6001a_ctr1 : MY-DISK-SRVR is DOWN!" Detailed
+  
+```
+  C:\temp\EventInterface.exe EventInterfaceFile=*EventInterface1.xml* ExtRefNo=NTTA_CRPROD_X12:13677005-###99 Description="frdosivspg6001a_ctr1 : MY-DISK-SRVR is DOWN!" Detailed
 Description="Event ID: 13677005 Initial Message: SRVR-NAME-1 : :SRVR-NAME-1.storage.MY-CO is DOWN! Object: /Status/Ping Object_Class: VENDORS_/Ping/Storage/MY-CO Parameter:  ParameterValue: " EmailAddress="MONITORING TOOLS" Impact=1 Urgency=1 CustomerCompany=ACME AssignGroup=GROUP-WW-STORAGE_L2 ReportedSource="Vendor Impact Manager Event" CatTier1=STORAGE CIName=SRVR-NAME-1 location=Unknown *show*
+
 
 Command Line Parameters:
 ExtRefNo=NTTA_CRPROD_X12:13677005-###99
@@ -141,7 +148,6 @@ Details:
 Return Code= 0 (Success)
 
 ```
-------------------------------------------------------------------------
 
 Return Codes
 ------------
@@ -156,7 +162,6 @@ The results for each execution are written to the system event log. The followin
 -   Error Creating Ticket = 6,
 -   Unknown = 10 (see Event Log for details)
 
-------------------------------------------------------------------------
 
 Default Values
 --------------
