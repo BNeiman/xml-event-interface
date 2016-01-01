@@ -66,9 +66,9 @@ The application is distributed with 4 files.
 
 ####EventInterface.exe.config
 You will need to update this file with the URL, ID, PW and TargetID for your integration.  
-* URL ñ Integration URL requires ID/PW for authentication.
-* ID / PW ñ The ID/PW used to authenticate with the Integration URL.
-* TargetID ñ The unique Target Name for your integration instance.  Target ID can be passed in the *template* `xml` file as a tag, `<TargetID>[Target ID]</TargetID>`.
+* URL ÷†Integration URL requires ID/PW for authentication.
+* ID / PW ÷†The ID/PW used to authenticate with the Integration URL.
+* TargetID ÷†The unique Target Name for your integration instance.  Target ID can be passed in the *template* `xml` file as a tag, `<TargetID>[Target ID]</TargetID>`.
 
 ####EventInterfaceFile.xml
 This file can be used to create multiple variations of the default values used to 
@@ -107,7 +107,7 @@ Each of the XML Template elements can be set by passing a command line parameter
 Passing the value "show" will write the application output to the console.
 
 Examples:
-     `C:\temp\>\EventInterface.exe show Description="Description of the Event for the help desk hereÖ" EventInterfaceFile="c:\temp\Incident1.xml"`
+     `C:\temp\>\EventInterface.exe show Description="Description of the Event for the help desk here≈¢ EventInterfaceFile="c:\temp\Incident1.xml"`
 
 
 ###Return Codes -
